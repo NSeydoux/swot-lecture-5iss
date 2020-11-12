@@ -1,0 +1,74 @@
+\begin{tikzpicture}
+	\input{illustrations/illustration_edrpt.tikz}
+	
+	%\draw (-5.9,2.1) -- (-2.5, 2.1) -- (-2.5, -0.7) -- (-5.9,-0.7) -- cycle;
+	
+	\node[appNode, right of=d, xshift=4cm] (app) {\pbox{3cm}{\Centering Control\\center}};
+	
+	\draw (-5.9,2.1) rectangle (-2.5, -0.7);
+	\draw (-4.3, 1.9) node {\footnotesize \textbf{Delivered content:}};
+	\draw[->, dashed] (-5.5,1.6) node {} -- (-5,1.6) node {};
+	\draw (-3.9,1.6) node {\footnotesize: Raw data};
+	\draw[->] (-5.5,1.3) node {} -- (-5,1.3) node {};
+	\draw (-3.75,1.3) node {\footnotesize: Deductions};
+	\draw (-4.85, 1) node {\footnotesize \textbf{Mechanism:}};
+	
+	\only<2->{
+		\draw[->, olive] (-5.5,0.4) node {} -- (-5,0.4) node {};
+		\draw (-4.2,0.4) node {\footnotesize: CDR};
+		\draw[->, olive, dashed]  (r111.90) to[out=90, in=195] (d.195);
+		\draw[->, olive]  (d.45) to[out=45, in=135] (app.135);
+	}
+	
+	\only<1->{
+		\draw[->, blue] (-5.5,0.7) node {} -- (-5,0.7) node {};
+		\draw (-4.25,0.7) node {\footnotesize: CIR};
+		\draw[->, blue, dashed]  (r112.90) to[out=90, in=315] (g110.345);
+		\draw[->, blue, dashed]  (g110.20) to[out=30, in=230] (f100.230);
+		\draw[->, blue, dashed]  (f100.145) to[out=145, in=225] (d.225);
+		\draw[->, blue]  (d.35) to[out=35, in=145] (app.145);
+	}
+
+	\only<3->{
+		\draw[->, red] (-5.5,0.1) node {} -- (-5,0.1) node {};
+		\draw (-4.25,0.1) node {\footnotesize: CIP};
+		\draw[->, red]  (r121.90) to[out=90, in=215] (g120.200);
+		\draw[->, red]  (g120.160) to[out=150, in=310] (f100.310);
+		\draw[->, red]  (f100.45) to[out=45, in=320] (d.320);
+		\draw[->, red]  (d.25) to[out=25, in=155] (app.155);
+	}	
+
+	\only<4->{
+		\draw[->, purple] (-5.5,-0.2) node {} -- (-5,-0.2) node {};
+		\draw (-4.2,-0.2) node {\footnotesize: CDP};
+		\draw[->, purple]  (r122.90) to[out=90, in=345] (d.345);
+		\draw[->, purple]  (d.15) to[out=15, in=165] (app.165);
+	}
+
+	\only<5->{
+		\draw[->, orange] (-5.5,-0.5) node {} -- (-5,-0.5) node {};
+		\draw (-4.2,-0.5) node {\footnotesize: ADP};
+		\draw[->, orange]  (r122.0) to[out=0, in=270] (app.270);
+	}
+
+%	\draw[<-, snake=bent, raise snake=4pt, olive]  (d.north east) -- node[above, text depth=12pt] {\pbox{3cm}{\Centering Registers $r_{C}$, $r_{TG}$}} (app.side 2);
+	
+%	\draw[->, olive] (d.south east) to[out=300,in=30] node [right] {$r_{C}$, $r_{TG}$} (f100.north east);
+%	\draw[->, olive] (f100.west) to[out=180,in=90] node [left] {\pbox{2cm}{\Centering $r_{C}$,\\$r_{TG}$}} (g110.north);
+%	\draw[->, olive] (f100.east) to[out=0,in=90] node [right] {\pbox{2cm}{\Centering $r_{TG}$}} (g120.north);
+%	\draw[->, olive] (g110.south west) to[out=250,in=90] node [left] {\pbox{2cm}{\Centering $r_{C}$}} (r111.north);
+%	\draw[->, blue] (r111.north west) to[out=120,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature}}} (g110.west);
+%	
+%	\draw[->, olive] (g110.south east) to[out=270,in=100] node [right] {\pbox{2cm}{\Centering $r_{C}$}} (r112.north);
+%	\draw[->, blue] (r112.north east) to[out=45,in=0] node [right] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature}}} (g110.east);
+%	
+%	\draw[dashed, gray] ([xshift=-0.3cm, yshift=0.3cm]r111.west) node [above] {$r_{C}$} -- (r111.west);
+%	\draw[dashed, gray] ([xshift=0.3cm, yshift=0.3cm]r112.east) node [above] {$r_{C}$} -- (r112.east);
+%	
+%	\draw[dashed, gray] ([xshift=-0.3cm, yshift=0.3cm]g110.north west) node [above] {$r_{TG}$} -- (g110.north west);
+%	\draw[dashed, gray] ([xshift=0.3cm, yshift=0.3cm]g120.north east) node [above] {$r_{TG}$} -- (g120.north east);
+%	
+%	\draw[->, blue] (r121.north) to[out=90,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature}}} (g120.west);
+%	\draw[->, blue] (r122.north) to[out=90,in=0] node [right] {\pbox{2cm}{\Centering \scalebox{0.8}{\thermostat}}} (g120.east);
+	
+\end{tikzpicture}

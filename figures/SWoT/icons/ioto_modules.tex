@@ -1,0 +1,62 @@
+\begin{tikzpicture}[auto]
+
+	%%% MODULES
+	\draw (0,0) node[shape=rectangle, draw=lightgray, minimum width = 13cm, line width=1pt] (dul) {DUL};
+	
+	\draw (-5.5, 3) node[shape=rectangle, draw=blue, line width=1pt] (ssn)  {SSN} ;
+	
+	\draw (-3, 2) node[shape=rectangle, draw=lightgray, line width=1pt] (ows)  {\pbox{2cm}{\Centering Objects\\with\\states}} ;
+	\draw node[above of=ows, shape=rectangle, draw=red, yshift=1cm, line width=1pt] (san)  {\textbf{SAN}} ;
+	
+	\draw (0, 2) node[shape=rectangle, draw=cyan, line width=1pt] (lifecycle)  {\pbox{2cm}{Lifecycle}} ;
+	\draw node[above of=lifecycle, shape=rectangle, draw, yshift=1cm, draw=cyan, line width=1pt] (iotlifecycle)  {\textbf{IoT-Lifecycle}} ;
+	
+	\draw (3, 1.5) node[shape=rectangle, draw=yellow, line width=1pt] (wsmo)  {WSMO-Lite} ;
+	\draw node[node distance=1.5cm, above of=wsmo, shape=rectangle, draw=yellow, line width=1pt] (msm)  {MSM} ;
+	\draw node[node distance=1.5cm,above of=msm, shape=rectangle, draw=yellow, line width=1pt] (hrest)  {hRest} ;
+	
+	\draw (5.5, 3) node[shape=rectangle, draw=green, line width=1pt] (poweront)  {PowerOnt} ;
+	
+	\draw (0,6) node[shape=rectangle, draw=violet, minimum width = 13cm, line width=1pt] (ioto) {\textbf{IoT-O}};
+	
+	%%% Dependancies
+	\draw[->, line width=1pt] (dul.north west) to[out=100,in=200](ioto.west);
+	
+	\draw[->, line width=1pt] (ssn.north) -| ([xshift=-5.5cm]ioto.south) ;
+	\draw[->] ([xshift=-5.5cm]dul.north) -| (ssn.south) ;
+	\draw[->, line width=1pt] (ssn.north) -- (san.west);
+	
+	\draw[->] ([xshift=-3cm]dul.north) -| (ows.south);
+	\draw[->, line width=1pt] (ows.north) -| (san) node[pos=0.8](action){};
+	\draw[->, line width=1pt] (san.north) -| ([xshift=-3cm]ioto.south);
+	\draw[->, line width=1pt] ([xshift=-3.5cm]dul.north) to[out=120,in=225](san.south west);
+	
+	%\draw[->, line width=1pt] (dul.north) -| (lifecycle.south);
+	\draw[->, line width=1pt] (lifecycle.north) -| (iotlifecycle.south) node[pos=0.8](lifecyclemodule){};
+	\draw[->, line width=1pt] (iotlifecycle.north) -| ([xshift=-0cm]ioto.south);
+	\draw[->, line width=1pt] ([xshift=-0.5cm]dul.north) to[out=120,in=225] ([xshift=-0.5cm]iotlifecycle.south);
+	
+	%\draw[->, line width=1pt] ([xshift=3cm]dul.north) -| (wsmo.south);
+	\draw[->] (wsmo.north) -| (msm.south);
+	\draw[->] (msm.north) -| (hrest.south);
+	\draw[->, line width=1pt] (hrest.north) -| ([xshift=3cm]ioto.south);
+	
+	%\draw[->, line width=1pt] ([xshift=5.5cm]dul.north) -| (poweront.south);
+	\draw[->, line width=1pt] (poweront.north) -| ([xshift=5.5cm]ioto.south);
+	
+	\begin{pgfonlayer}{background}
+		\fill[fill=blue, opacity=0.2] ([yshift=-0cm]ssn) ellipse (0.75 and 3); 
+		\fill[fill=red, opacity=0.2] ([xshift=0.1cm, yshift=-0.3cm]action) ellipse (1.25 and 3);
+		\fill[fill=cyan, opacity=0.2] ([xshift=0.1cm, yshift=-0.2cm]lifecyclemodule) ellipse (1.25 and 3); 
+		\fill[fill=yellow, opacity=0.2] (msm) ellipse (1.25 and 3); 
+		\fill[fill=green, opacity=0.2] (poweront) ellipse (1 and 3); 
+	\end{pgfonlayer}
+	
+	%%% CAPTION
+	\draw node[above left of=ssn, xshift=0cm,yshift=1.5cm] (refmodules) {\footnotesize \pbox{2cm}{\Centering \textbf{Sensing}\\\textbf{module}}};
+	\draw node[right of=refmodules, xshift=1.5cm] {\footnotesize \pbox{2cm}{\Centering \textbf{Acting}\\\textbf{module}}};
+	\draw node[right of=refmodules, xshift=4.3cm] {\footnotesize \pbox{2cm}{\Centering \textbf{Lifecycle}\\\textbf{module}}};
+	\draw node[right of=refmodules, xshift=7.5cm] {\footnotesize \pbox{2cm}{\Centering \textbf{Service}\\\textbf{module}}};
+	\draw node[right of=refmodules, xshift=10cm] {\footnotesize \pbox{2cm}{\Centering \textbf{Power}\\\textbf{module}}};
+
+\end{tikzpicture}

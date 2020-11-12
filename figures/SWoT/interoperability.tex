@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+	\draw (0,0) node (french_plug) {\includegraphics[width=0.3\textwidth]{figures/SWoT/french_plug.jpg}};
+	\draw (-6, 0) node (uk_socket) {\includegraphics[width=0.3\textwidth]{figures/SWoT/uk_socket.jpg}};
+	\draw (0, -4.5) node (french_socket) {\includegraphics[width=0.3\textwidth]{figures/SWoT/french_socket.jpg}};
+	\draw (-6, -4.5) node (adapter) {\includegraphics[width=0.3\textwidth]{figures/SWoT/french_adapter.jpg}};
+	\draw[line width=5pt, <->] (french_plug) -- (french_socket);
+	\draw[line width=5pt, <->] (adapter) -- (uk_socket);
+	\draw[line width=5pt, <->] (french_plug) -- (adapter);
+	\draw[line width=5pt, <->, dashed, red] (french_plug) -- (uk_socket);
+\end{tikzpicture}

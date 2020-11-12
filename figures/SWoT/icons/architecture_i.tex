@@ -1,0 +1,106 @@
+\begin{tikzpicture}
+		
+	\tikzstyle{appNode}=[regular polygon, draw, regular polygon sides=6, inner sep=0.1cm]
+	\tikzstyle{cloudNode}=[cloud, draw,cloud puffs=10,cloud puff arc=120, aspect=2, inner ysep=0.1cm]
+	\tikzstyle{fogNode}=[rectangle, draw]
+	\tikzstyle{sensorNode}=[circle, draw]
+	
+	%\tikzstyle{level all}=[level distance=2cm]
+	\tikzstyle{level 1}=[sibling distance=3cm, level distance=2.5cm]
+	\tikzstyle{level 2}=[sibling distance=2cm, level distance=2.5cm]
+	\tikzstyle{level 3}=[sibling distance=1cm, level distance=2cm]
+	
+	\node[cloudNode] (d) {\server} [grow=right]
+		child { node[fogNode] (g110) {\gateway} 
+			child { node[fogNode] (r111) {\gateway} 
+				child {node[sensorNode] (temp111) {\scalebox{0.6}{\luminosity}}}
+				child {node[sensorNode] (lumi111) {\scalebox{0.6}{\pyranometry}}}
+			}
+			child { node[fogNode] (r112) {\gateway} 
+				child {node[sensorNode] (lumi112) {\scalebox{0.6}{\temperature}}}
+				child {node[sensorNode] (temp112) {\scalebox{0.6}{\thermostat}}}
+			}
+		}
+		child { node[fogNode] (g120) {\gateway} 
+			child[sibling distance=1cm] { node[fogNode] (r121) {\gateway} 
+				child {node[sensorNode] (temp121) {\scalebox{0.6}{\luminosity}}}	
+			}
+			child[sibling distance=1cm] { node[fogNode] (r122) {\gateway}
+				child {node[sensorNode] (ther122) {\scalebox{0.6}{\pyranometry}}}
+			}
+		};
+		
+	\node[appNode, above left of=d, xshift=-2cm] (app0) {\terminal};
+	\draw (app0) -- (d);
+	\node[appNode, below left of=d, xshift=-2cm] (app1) {\piechart};
+	\draw (app1) -- (d);
+	\draw[<->] (-4, 2.5) -- (-1.5,2.5)
+	node[above, midway] {\small HTTP};
+	\draw[<->] (6, 2.5) -- (8.2,2.5)
+	node[above, midway] {\small IoT protocols};
+	\draw[dashed, gray] (-1.5, 2.5) -- (-1.5, -3);
+	\draw[dashed, gray] (6, 2.5) -- (6, -3);
+	\draw[dashed, gray] (8.2, 2.5) -- (8.2, -3);
+
+	\draw[<->] (-1.5, 2.5) -- (1.5,2.5)
+	node[above, midway] {\small HTTP/CoAP};	
+	\draw[dashed, gray] (1.5, 2.5) -- (1.5, -3);
+
+	\draw[<->] (1.5, 2.5) -- (6,2.5)
+	node[above, midway] {\small HTTP/CoAP/IoT protocols};
+
+\draw (0, -4) node {\pbox{2cm}{\Centering \textbf{\textcolor{white}{Semantic Cloud}}\\ \textbf{\textcolor{white}{computing}}}};
+\draw (4, -4) node {\pbox{2cm}{\Centering \textbf{\textcolor{white}{Semantic Fog}}\\ \textbf{\textcolor{white}{computing}}}};
+\draw[white] (2, -6) node {\pbox{10cm}{\Centering Reasoning}};
+
+
+	\only<1->{
+		\draw (0, -4) node {\pbox{2cm}{\Centering \textbf{Semantic Cloud}\\ \textbf{computing}}};
+	}
+
+	\only<2->{
+		\draw (4, -4) node {\pbox{2cm}{\Centering \textbf{Semantic Fog}\\ \textbf{computing}}};
+	}
+
+	\draw [snake=brace, segment amplitude=8pt, thick, mirror snake, white] (0, -4.8) -- (4, -4.8);
+	\draw (2, -5.5) node {\pbox{10cm}{\Centering \textbf{\textcolor{white}{Cooperative Semantic computing}}}};
+	
+	\only<3->{
+		\draw [snake=brace, segment amplitude=8pt, thick, mirror snake] (0, -4.8) -- (4, -4.8);
+		\draw (2, -5.5) node (cooperative) {\pbox{10cm}{\Centering \textbf{Cooperative Semantic computing}}};
+	}
+	
+	\only<4->{
+		\draw[->, red] (temp111) to[out=270, in=0] node[right] {Data} (cooperative);
+	}
+
+	\only<5->{
+	\draw[red] (2, -6) node {\pbox{10cm}{\Centering Reasoning}};
+}
+
+	\only<6->{
+		\draw[->, red] (cooperative) to[out=180, in=270] node[right, yshift=1.5cm] {\pbox{5cm}{\Centering Information\\(Business-specific)}} (app1);
+	}
+%	
+%	\draw [snake=brace, segment amplitude=8pt, thick, mirror snake, white] (0, -4.8) -- (4, -4.8);
+%	\draw (2, -5.5) node {\pbox{10cm}{\Centering \textbf{\textcolor{white}{Cooperative Semantic computing}}}};
+%	
+%	\only<7->{
+%		\draw [snake=brace, segment amplitude=8pt, thick, mirror snake] (0, -4.8) -- (4, -4.8);
+%		\draw (2, -5.5) node (cooperative) {\pbox{10cm}{\Centering \textbf{Cooperative Semantic computing}}};
+%	}
+%
+%	\only<8->{
+%		\draw[->, red] (temp111) to[out=270, in=0] node[right] {Data} (cooperative);
+%	}
+%
+%	\only<9->{
+%		\draw[red] (2, -6) node {\pbox{10cm}{\Centering Reasoning}};
+%	}
+%
+%	\only<10->{
+%		\draw[->, red] (cooperative) to[out=180, in=270] node[right, yshift=1.5cm] {\pbox{5cm}{\Centering Information\\(Business-specific)}} (app1);
+%	}
+
+	
+\end{tikzpicture}

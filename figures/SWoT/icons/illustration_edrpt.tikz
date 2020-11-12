@@ -1,0 +1,32 @@
+	\tikzstyle{appNode}=[regular polygon, draw, regular polygon sides=6, inner sep=0.1cm]
+	\tikzstyle{cloudNode}=[cloud, draw,cloud puffs=10,cloud puff arc=120, aspect=2, inner ysep=0.1cm]
+	\tikzstyle{fogNode}=[ellipse, draw, level distance=1.5cm]
+	\tikzstyle{sensorNode}=[level distance=1cm, sibling distance=1cm]
+	
+	\tikzstyle{level 1}=[sibling distance=6cm]
+	\tikzstyle{level 2}=[sibling distance=4cm]
+	\tikzstyle{level 3}=[sibling distance=1.8cm]
+	
+	\node[cloudNode] (d) {\pbox{3cm}{\Centering Factory\\datacenter}}
+		child[level distance=2cm] { node[ellipse,draw] (f100) {\pbox{3cm}{\Centering Floor}}
+			child[sibling distance=5cm, level distance=1.5cm] { node[ellipse,draw,sibling distance=1cm] (g110) {\pbox{3cm}{\Centering Gallery}} 
+				child { node[ellipse,draw] (r111) {\pbox{3cm}{\Centering Room}} 
+					child[sensorNode] {node (temp111) {\off}}
+					child[sensorNode] {node (lumi111) {\luminosity}}
+				}
+				child[sensorNode] {node (ther110) {\pyranometry}}
+				child { node[ellipse,draw] (r112) {\pbox{3cm}{\Centering Room}} 
+					child[sensorNode] {node (lumi112) {\luminosity}}
+					child[sensorNode] {node (temp112) {\off}}
+				}
+			}
+			child[sibling distance=5.8cm, level distance=1.5cm] { node[ellipse,draw] (g120) {\pbox{3cm}{\Centering Gallery}} 
+				child[sibling distance=2.5cm] { node[ellipse,draw] (r121) {\pbox{3cm}{\Centering Room}} 
+					child[sensorNode] {node (temp121) {\off}}	
+				}
+				child[sibling distance=2.5cm] { node[ellipse,draw] (r122) {\pbox{3cm}{\Centering Room}}
+					child[sensorNode] {node (ther122) {\temperature}}
+				}
+			}
+		};
+	

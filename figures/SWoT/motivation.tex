@@ -1,0 +1,76 @@
+\begin{tikzpicture}
+\draw (0,0) node {\scalebox{0.8}{\adream}};
+\draw (2,1.5) node {\scalebox{0.2}{\weatherstation}};
+
+\draw[white] (2,1.5) node[circle, minimum size=1cm] (focus_weather){};
+\draw[white] (focus_weather.west) -- ([xshift=-0.6cm, yshift=2cm]focus_weather.west);
+\draw[white] (focus_weather.east) -- ([xshift=0.6cm, yshift=2cm]focus_weather.east);
+\draw[white] (2.8,0.5) node[circle, minimum size=0.6cm] (focus_office){};
+\draw[white] (focus_office.north) -- ([xshift=2cm, yshift=0.6cm]focus_office.north);
+\draw[white] (focus_office.south) -- ([xshift=2cm, yshift=-0.6cm]focus_office.south);
+\draw[white] (1.5,-1) node[circle, minimum size=1cm] (focus_appartment){};
+\draw[white] (focus_appartment.north east) -- ([xshift=2cm, yshift=-2cm]focus_appartment.north east);
+\draw[white] (focus_appartment.south west) -- ([xshift=0.5cm, yshift=-2cm]focus_appartment.south west);
+
+\only<2->{
+	\draw (-0.8,-0.1) node[circle, draw=white, minimum size=1cm] (focus_solar){};
+	\draw (focus_solar.west) -- ([xshift=-1.2cm, yshift=3.5cm]focus_solar.west) node[pos=0.46] (n1) {};
+	\draw[white] (focus_solar.west) -- (n1);
+	\draw (focus_solar.east) -- ([xshift=0.4cm, yshift=3.5cm]focus_solar.east) node[pos=0.46] (n2) {};
+	\draw[white] (focus_solar.east) -- (n2);
+	\draw ([xshift=-1cm, yshift=2.8cm]focus_solar) node (power_solar) {\power};
+	\draw ([xshift=0cm, yshift=2.8cm]focus_solar) node(pyrano_solar) {\pyranometry};
+}
+
+\only<3->{
+	\draw (2,1.5) node[circle, draw=black, minimum size=1cm] (focus_weather){};
+	\draw (focus_weather.west) -- ([xshift=-0.6cm, yshift=2cm]focus_weather.west);
+	\draw (focus_weather.east) -- ([xshift=0.6cm, yshift=2cm]focus_weather.east);
+	\draw ([xshift=0.6cm,yshift=1.6cm]focus_weather) node (pyrano_weather) {\pyranometry};
+	\draw ([xshift=-0.6cm,yshift=1.6cm]focus_weather) node (anemo_weather) {\anemometer};
+	\draw ([xshift=0cm,yshift=1.2cm]focus_weather) node (temperature_weather){\temperature};
+}
+
+\only<4->{
+	\draw (2.8,0.5) node[circle, draw=black, minimum size=0.6cm] (focus_office){};
+	\draw (focus_office.north) -- ([xshift=2cm, yshift=0.6cm]focus_office.north);
+	\draw (focus_office.south) -- ([xshift=2cm, yshift=-0.6cm]focus_office.south);
+	\draw ([xshift=1.7cm, yshift=0.4cm]focus_office) node (lamp_office) {\scalebox{1.4}{\faLightbulbO}};
+	\draw ([xshift=1.7cm, yshift=-0.4cm]focus_office) node (fire_office) {\scalebox{1.4}{\faFire}};
+	\draw ([xshift=1.2cm, yshift=0]focus_office) node (luminosity_office) {\luminosity};
+}
+
+\only<5->{
+	\draw (1.5,-1) node[circle, draw=black, minimum size=1cm] (focus_appartment){};
+	\draw (focus_appartment.north east) -- ([xshift=2cm, yshift=-2cm]focus_appartment.north east);
+	\draw (focus_appartment.south west) -- ([xshift=0.5cm, yshift=-2cm]focus_appartment.south west);
+	\draw ([xshift=0.8cm, yshift=-1.9cm]focus_appartment) node (power_appt) {\power};
+	\draw ([xshift=1.5cm, yshift=-1.5cm]focus_appartment) node (presence_appt) {\presence};
+	\draw ([xshift=1cm, yshift=-1.1cm]focus_appartment) node (robot_appt) {Robot};
+}	
+
+\only<6->{
+	\draw[yellow] ([xshift=0.05cm]power_appt) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[green] ([xshift=0.05cm]presence_appt) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	
+	\draw[yellow] (lamp_office) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[green] (fire_office) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[pink] ([xshift=0.05cm]luminosity_office)  node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	
+	\draw[red] ([xshift=0.05cm]pyrano_weather) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[red] ([xshift=0.05cm]anemo_weather) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[purple] ([xshift=0.05cm]temperature_weather) node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[blue] ([xshift=0.05cm]pyrano_solar)node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+	\draw[blue] ([xshift=0.05cm]power_solar)node[circle, fill, minimum size=0.6cm, opacity=0.4] {};
+}
+
+\only<7>{
+	\draw (5,2.5) node (datacenter) {\scalebox{1.5}{\server}};
+
+	\draw[->] (focus_appartment) -- (datacenter);
+	\draw[->] (focus_office) -- (datacenter);
+	\draw[->] (focus_weather) -- (datacenter);
+	\draw[->] (focus_solar) -- (datacenter) node[pos=0.37] (n3) {};
+		\draw[white] (focus_solar) -- (n3);
+}
+\end{tikzpicture}

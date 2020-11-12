@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+	\draw (0,0) rectangle (2,1);
+	\draw (1,0.5) node (adream) {ADREAM};
+	
+	\draw (2.2, 0) rectangle (4.2, 1);
+	\draw (3.2, 0.5) node (testbed1) {Testbed};
+	
+	\draw (4.4, 0) rectangle (6.4, 1);
+	\draw (5.4, 0.5) node (testbed2) {Testbed};
+	
+	\draw (0, 2) rectangle (6.4, 3);
+	\draw (3.2, 2.5) node (fiesta) {FIESTA platform};
+	
+	\draw (0,4) rectangle (2.4,5);
+	\draw (1.2,4.5) node (experimenter1) {Experimenter};
+	
+	\draw (4, 4) rectangle (6.4, 5);
+	\draw (5.2, 4.5) node (experimenter2) {Experimenter};
+	
+	\draw ([yshift=0.23cm]adream.north) -- node[left] {Alignment} ([yshift=-0.2cm]fiesta.south); 
+	\draw ([yshift=0.23cm]testbed1.north) -- node[left] {} ([yshift=-0.2cm]fiesta.south); 
+	\draw ([yshift=0.23cm]testbed2.north) -- node[left] {} ([yshift=-0.2cm]fiesta.south); 
+	
+	\draw ([yshift=-0.2cm]experimenter1.south) -- node[left] {Query} ([yshift=0.21cm]fiesta.north); 
+	\draw ([yshift=-0.2cm]experimenter2.south) -- node[left] {} ([yshift=0.21cm]fiesta.north); 
+\end{tikzpicture}

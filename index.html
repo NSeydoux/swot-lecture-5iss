@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Solid, data not included</title>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css"></link>
+    <link rel="stylesheet" href="./style/style.css"></link>
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css"></link>
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>An introduction to the Semantic Web</h1>
+        <p>Nathalie Hernandez, PhD., Nicolas Seydoux, PhD., engineer at Inrupt</p>
+        <object data="css/theme/inrupt/inrupt.svg" type="image/svg+xml" width="150"></object>
+    </header>
+
+    <section class="slide">
+        <h2 class="section-title place center">Origins and fundamental principles of the Semantic Web</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">Internet and the Web</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">Knowing the difference</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Who are these people ?</h2>
+        <img class="figure" src="figures/web/lee_cerf.jpg"></img>
+        <p class="fig-caption">Tim Berners Lee and Vint Cert</p>
+    </section>
+
+    <section class="slide">
+        <h2>Internet, or the Web?</h2>
+        <table>
+            <tr>
+                <th scope="col"></th>
+                <th>Internet</th>
+                <th>The Web</th>
+            </tr>
+            <tr>
+                <th scope="row">Fortnite</th>
+                <td class="next"><i class="fas fa-check"></i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Article wikipédia</th>
+                <td></td>
+                <td class="next"><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+                <th scope="row">SSH</th>
+                <td class="next"><i class="fas fa-check"></i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Mail</th>
+                <td class="next"><i class="fas fa-check"></i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">Git</th>
+                <td class="next"><i class="fas fa-check"></i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">GitHub</th>
+                <td></td>
+                <td class="next"><i class="fas fa-check"></i></td>
+            </tr>
+            </table>
+    </section>
+
+    <section class="slide">
+        <h2>The Web, an Internet application</h2>
+        <object class="figure" data="resources/img/web/internet-vs-web.svg" type="image/svg+xml"></object>
+    </section>
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+    <script type="text/javascript">
+        (async () => {
+            const parts = document.getElementsByClassName("part");
+            for(part of parts) {
+                await fetch(part.getAttribute("path"))
+                .then(response => response.text())
+                .then(data => {
+                    part.innerHTML = data
+                });
+            }
+        })()
+    </script>
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+    <!-- <script src="lib/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>  -->
+    <!-- <script src="node_modules/d3/dist/d3.min.js"></script>
+    <script src="./scripts/agri_co2_breakdown.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+\begin{tikzpicture}
+	\input{illustrations/illustration_edrpt.tikz} 
+	
+	\node[appNode, right of=d, xshift=4cm] (app) {\pbox{3cm}{\Centering Control\\center}};
+
+	\draw[->, white] (r111.north west) to[out=120,in=180] node [left] {\pbox{2cm}{\textcolor{white}{testtesttest} }} (g110.west);
+
+	\only<2-4>{
+		\draw (-7, 0) node[right] {\textbf{Capabilities announcement}};
+		\draw[->, red] (r111.north west) to[out=120,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\off \luminosity}}} (g110.west);
+		\draw[->, red] (r112.north east) to[out=45,in=0] node [right] {\pbox{2cm}{\Centering \scalebox{0.8}{\off \luminosity}}} (g110.east);
+		\draw[->, red] (r121.north) to[out=90,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\off}}} (g120.west);
+		\draw[->, red] (r122.north) to[out=90,in=0] node [right] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature}}} (g120.east);
+	}
+
+	\only<3-4>{
+		\draw[->, red] (g110.north) to[out=90,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\off \pyranometry \luminosity}}} (f100.west);
+		\draw[->, red] (g120.north) to[out=90,in=0] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature \off}}} (f100.east);
+	}
+
+	\only<4-4>{
+		\draw[->, red] (f100.north west) to[out=135,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature \off \pyranometry \luminosity}}} (d.west);
+	}
+	\draw[<-, snake=bent, raise snake=4pt, white]  (d.north east) -- node[above, text depth=12pt] {\pbox{3cm}{\Centering \textcolor{white}{Registers $R_{L}$, $R_{T}$, $R_{S}$}}} (app.side 2);
+	\only<5-8>{
+		\draw[<-, snake=bent, raise snake=4pt, olive]  (d.north east) -- node[above, text depth=12pt] {\pbox{3cm}{\Centering Registers $R_{L}$, $R_{T}$, $R_{S}$}} (app.side 2);
+	}
+
+	\draw[white] (-7, -3.3) rectangle (-4.2, -0.55);
+	\only<5->{
+		\draw (-7, -3.3) rectangle (-4.2, -0.55);
+		\draw[olive] (-6.9, -1) node[right] {$R_{L}$:\off \luminosity \pyranometry  };
+		\draw[olive] (-6.9, -2) node[right] {$R_{S}$:\off \luminosity };
+		\draw[olive] (-6.9, -3) node[right] {$R_{T}$:\off \temperature };
+	}
+
+	\only<6-8>{
+		\draw (-7, 0) node[right] {\textbf{Rules propagation}};
+		\draw[->, olive] (d.south east) to[out=300,in=30] node [right] {$R_{L}$, $R_{T}$, $R_{S}$} (f100.north east);
+	}
+
+	\only<7-8>{
+		\draw[->, olive] (f100.west) to[out=180,in=90] node [left] {\pbox{2cm}{\Centering $R_{L}$,\\$R_{S}$}} (g110.north);
+		\draw[->, olive] (f100.east) to[out=0,in=90] node [right] {\pbox{2cm}{\Centering $R_{T}$}} (g120.north);
+	}
+
+	\only<7-9>{
+		
+		\draw[dashed, gray] ([xshift=-0.3cm, yshift=0.3cm]g110.north west) node [above] {$R_{L}$} -- (g110.north west);
+		\draw[dashed, gray] ([xshift=0.3cm, yshift=0.3cm]g120.north east) node [above] {$R_{T}$} -- (g120.north east);
+	}
+	
+	\only<8>{
+		\draw[->, olive] (g110.south west) to[out=250,in=90] node [left] {\pbox{2cm}{\Centering $R_{S}$}} (r111.north);
+		\draw[->, olive] (g110.south east) to[out=270,in=100] node [right] {\pbox{2cm}{\Centering $R_{S}$}} (r112.north);
+	}
+	
+	\only<8-9>{
+		\draw[dashed, gray] ([xshift=-0.3cm, yshift=0.3cm]r111.west) node [above] {$R_{S}$} -- (r111.west);
+		\draw[dashed, gray] ([xshift=0.3cm, yshift=0.3cm]r112.east) node [above] {$R_{S}$} -- (r112.east);
+	}
+
+	\only<9-9>{
+		\draw (-7, 0) node[right] {\textbf{Observations dissemination}};
+		\draw[->, blue] (r111.north west) to[out=120,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\off, \luminosity}}} (g110.west);
+		\draw[->, blue] (r112.north east) to[out=45,in=0] node [right, above] {\pbox{2cm}{\Centering \scalebox{0.8}{\off, \luminosity}}} (g110.east);
+		\draw[->, blue] (r121.north) to[out=90,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\off}}} (g120.west);
+		\draw[->, blue] (r122.north) to[out=90,in=0] node [right] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature}}} (g120.east);
+	}
+	
+	\only<10-10>{
+		\draw (-7, 0) node[right] {\textbf{Deductions delivery}};
+		\draw[->] (g120.north) to[out=90,in=180] node [right] {$R_{T}$ deduction} (app.side 3);
+%		\draw[->, blue] (r112.north east) to[out=45,in=0] node [right, above] {\pbox{2cm}{\Centering \scalebox{0.8}{\off, \luminosity}}} (g110.east);
+%		\draw[->, blue] (r121.north) to[out=90,in=180] node [left] {\pbox{2cm}{\Centering \scalebox{0.8}{\off}}} (g120.west);
+%		\draw[->, blue] (r122.north) to[out=90,in=0] node [right] {\pbox{2cm}{\Centering \scalebox{0.8}{\temperature}}} (g120.east);
+	}
+	
+\end{tikzpicture}
