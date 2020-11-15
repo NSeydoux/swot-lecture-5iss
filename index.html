@@ -22,8 +22,133 @@
         <object data="css/theme/inrupt/inrupt.svg" type="image/svg+xml" width="150"></object>
     </header>
 
+    <!-- TODO: Syllabus -->
+
     <section class="slide">
-        <h2 class="section-title place center">Origins and fundamental principles of the Semantic Web</h2>
+        <h2>Syllabus</h2>
+        <ul>
+            <li>Course content
+                <ul>
+                    <li>2 lectures</li>
+                    <li>2 labs</li>
+                </ul>
+            </li>
+            <li>Evaluation
+                <ul>
+                    <li>Lab report</li>
+                </ul>
+            </li>
+            <li>Material
+                <ul>
+                    <li>Web page: https://zwifi.eu/public/pages/syllabus_iss.html</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">Artificial intelligence</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Some definitions</h2>
+        <ul>
+            <li>"The goal of AI is to develop machines that behave as though they were intelligent" - <i>John McCarthy</i></li>
+            <li>"If a human could not distinguish between responses from a machine and a human, the machine could be considered 'intelligent'" - <i>Alan Turing</i></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Talking</h2>
+        <div class="columns two">
+            <img class="figure-large" src="figures/ia/chatbot_engie.jpg">
+            <img class="figure-large" src="figures/ia/cleverbot.png">
+        </div>
+        <div class="columns two">
+            <h3>Turing test</h3>
+            <ul>
+                <li>Master natural language</li>
+                <li>Manipulate knowledge</li>
+                <li>Understand and reason</li>
+                <li>Automatic learning</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Hearing</h2>
+        <img class="figure" src="figures/ia/robot-listening.png">
+        <p><a href="https://voice.mozilla.org/">Common Voice project</a>, and its implementation <a href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Playing</h2>
+        <img class="figure" src="figures/ia/go.JPG">
+        <p>27/05/2017, Alphago outplays M. Ke Jie, Go world champion, to be in its turn outplayed by DeepMind <a href="https://arxiv.org/abs/1712.01815">ref</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Seeing</h2>
+        <img class="figure" src="figures/ia/google_vision.jpg">
+        <p><a href="https://research.googleblog.com">AutoML</a> optimizes neuron networks for computer vision</p>
+    </section>
+
+    <section class="slide">
+        <h2>Selling</h2>
+        <img class="figure" src="figures/ia/google_adwords.jpg">
+        <img class="figure" src="figures/ia/amazon_suggestion.png">
+    </section>
+
+    <section class="slide">
+        <h2>Key take-away</h2>
+        <ul>
+            <li>Language conveys meaning</li>
+            <li>The model matters</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>DIKW pyramid</h2>
+        <ul>
+            <li><b>Noise</b>: Stimulus devoid of meaning</li>
+            <li><b>Data</b>: Output of a measure</li>
+            <li><b>Information</b>: Data contextualized</li>
+            <li><b>Knowledge</b>: Meaning associated to information</li>
+            <li><b>Wisdom</b>: Attitude driven by knowledge</li>
+        </ul>
+        <img class="figure" src="figures/websem/dikw.png" alt="Image from THE FUTURIST, 12/1982">
+    </section>
+
+    <section class="slide">
+        <h2>Formal logic</h2>
+        <div class="columns two">
+            <p>Logics aims at <b>formally</b> modelling mechanisms of the common sense and <b>reasoning</b> to study and <b>automate</b> them.
+            <br>Image: SMBC comics</p>
+            <img class="figure-large" src="figures/websem/logical_proof.png">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>What is a logic ?</h2>
+        <div class="columns two">
+            <ul>
+                <h3>Constituting elements</h3>
+                <li>A <b>syntax</b> (grammar + vocabulary)</li>
+                <li>A <b>semantics</b></li>
+                <li>A <b>deduction</b> mechanism</li>
+            </ul>
+            <ul>
+                <h3>Their roles (respectively)</h3>
+                <li>Describe knowledge</li>
+                <li>Pair it with meaning</li>
+                <li>Infer new information</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>IoT: the must-have</h2>
+        <img class="figure-large" src="figures/ioshit/lock.jpg">
     </section>
 
     <section class="slide">
@@ -36,7 +161,7 @@
 
     <section class="slide">
         <h2>Who are these people ?</h2>
-        <img class="figure" src="figures/web/lee_cerf.jpg"></img>
+        <img class="figure-large" src="figures/web/lee_cerf.jpg"></img>
         <p class="next fig-caption">Tim Berners Lee and Vint Cert</p>
     </section>
 
@@ -90,10 +215,55 @@
         <h2>The World Wide Web</h2>
         <ul>
             <h3>Fundamental principles</h3>
-            <li><b>Identification</b> of ressources (pages, images, sounds...) with URLs</li>
+            <li><b>Identification</b> of ressources (pages, images, sounds...)</li>
             <li><b>Representation</b> of ressources in different serializations</li>
             <li><b>Interaction</b> between agents for representation negociation, resource discovery, etc.</li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Resource identification: the IRI</h2>
+        <ul>
+            <li>Unique and unambiguous identifier</li>
+            <li>Dereferencable: an IRI can be looked up</li>
+            <li>URL, URI, IRI
+                <ul>
+                    <li>URL: <b>U</b>niform <b>R</b>esource <b>L</b>ocator</li>
+                    <li>URI: <b>U</b>niform <b>R</b>esource <b>I</b>dentifier</li>
+                    <li>IRI <b>I</b>nternational <b>R</b>esource <b>I</b>dentifier</li>
+                </ul>
+            </li>
+        </ul>
+        <pre>http://subdomain.domain.tld:port/path</pre>
+    </section>
+
+    <section class="slide">
+        <h2>Interacting on the Web: HTTP</h2>
+        <div class="columns two">
+            <ul>
+                <li>Client/server protocol</li>
+                <li>Hypertext navigation</li>
+                <li>Content negociation</li>
+                <li>CRUD operations
+                    <ul>
+                        <li>PUT, GET, PATCH, DELETE</li>
+                        <li>POST, HEAD, OPTIONS...</li>
+                    </ul>
+                </li>
+            </ul>
+            <pre>
+                <code>
+GET / HTTP/1.1
+Host: perdu.com
+
+HTTP/1.1 200 OK
+Content-Type: text/html
+&lt;html>&lt;head>&lt;title>...
+
+                </code>
+            </pre>
+        </div>
+        
     </section>
 
     <section class="slide">
@@ -152,7 +322,7 @@
     <section class="slide">
         <h2>Other standards organizations</h2>
         <ul>
-            <li>Web protocols are standardized by the IETF</li>
+            <li>Some Web protocols are standardized by the IETF</li>
         </ul>
         <img class="figure" src="figures/web/ietf-logo.jpg">
     </section>
@@ -262,6 +432,562 @@
             <li>Data is <b>structured</b> by the one <b>collecting</b> it</li>
             <li>User requirements are only <b>guessed</b></li>
         </ul>
+    </section>
+
+    <section class="slide">
+        <h2>The old Web is "human-driven"</h2>
+        <ul>
+            <h3>Tedious tasks are left up to people</h3>
+            <li>Finding good, reliable ressources</li>
+            <li>Extracting relevant information</li>
+            <li>Making synthetis of the results</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>These limitations are very current</h2>
+        <ul>
+            <h3>Web scale</h3>
+            <li>More and more content.</li>
+            <li>More and more users.</li>
+        </ul>
+        <ul>
+            <h3>The paradox</h3>
+            <li><b>Manual</b> processing gets harder.</li>
+            <li><b>Automated</b> processing is still very complex.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>IoT: the must-have</h2>
+        <img class="figure-large" src="figures/ioshit/robinet.jpg">
+    </section>
+
+    <!-- TODO: Transition with Linked Data -->
+
+    <section class="slide">
+        <h2 class="section-title place center">Linking Data on the Web</h2>
+    </section>
+
+    <section class="slide">
+        <h2>The W3C layer cake</h2>
+        <img class="figure-large" src="figures/websem/Semantic_Web_Stack_LOD.png">
+    </section>
+
+    <section class="slide">
+        <h2>Tim at it again</h2>
+        <ul>
+            <li>Tim BL proposed a <b><a href="https://www.w3.org/DesignIssues/LinkedData.html">hierarchy for data</a></b></li>
+            <li>Higher score means higher reusability</li>
+        </ul>
+        <img class="figure" src="figures/websem/lod/5_star_mug.jpg">
+    </section>
+
+    <section class="slide">
+        <h2>The ADREAM building</h2>
+        <img class="figure" src="figures/use_cases/adream.jpg">
+        It exposes an <a href="https://syndream.laas.fr/">open data</a>
+    </section>
+
+    <section class="slide">
+        <h2><i class="fa fa-star"></i></h2>
+        <ul>
+            <li>Data is <b>available on the Web</b> (has an IRI), under a <b>free licence</b></li>
+        </ul>
+        <img class="figure-large" src="figures/websem/lod/image_table.png">.
+    </section>
+
+    <section class="slide">
+        <h2><i class="fa fa-star"></i><i class="fa fa-star"></i></h2>
+        <ul>
+            <li>1-star</li>
+            <li>Data is <b>structured</b></li>
+        </ul>
+        <img class="figure-large" src="figures/websem/lod/table_excel.png">.
+    </section>
+
+    <section class="slide">
+        <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h2>
+        <ul>
+            <li>2-star</li>
+            <li>Data is expressed in an <b>open format</b></li>
+        </ul>
+        <img class="figure-large" src="figures/websem/lod/table_csv.png">.
+    </section>
+
+    <section class="slide">
+        <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h2>
+        <ul>
+            <li>3-star</li>
+            <li>Data complies with <b>W3C specifications</b></li>
+        </ul>
+        <img class="figure-large" src="figures/websem/lod/sample_data_rdf.png">.
+    </section>
+
+    <section class="slide">
+        <h2><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></h2>
+        <ul>
+            <li>4-star</li>
+            <li>Data is <b>linked to other data</b></li>
+        </ul>
+        <img class="figure-large" src="figures/websem/lod/sample_data_linked.png">.
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">Representing data in RDF</h2>
+    </section>
+
+    <section class="slide">
+        <h2>The Web is a graph of linked documents</h2>
+        <ul>
+            <li>Each IRI is a graph node</li>
+            <li>Each <code>href</code> link is a graph edge</li>
+        </ul>
+        <p class="next">Let's apply the same thinking to data</p>
+    </section>
+
+    <section class="slide">
+        <h2>Linked data concepts</h2>
+        <ul>
+            <li>Each entity has an IRI</li>
+            <li>Entities are linked together with typed links</li>
+            <li>Links are also identified with an IRI</li>
+        </ul>
+        <div class="columns two">
+            <img class="figure-large" src="figures/websem/lod/table_csv.png">
+            <img class="figure-large" src="figures/websem/lod/sample_data_rdf.png">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Representing a graph in RDF</h2>
+        <ul>
+            <h3>Atomic graph unit: the triple</h3>
+            <li>The <b>subject</b>: What/Who are we taking about</li>
+            <li>The <b>predicate</b>: a property of the subject</li>
+            <li>The <b>object</b>: Value of the predicate for the subject</li>
+        </ul>
+        <img class="figure" src="figures/websem/lod/RDF_triple.png">
+    </section>
+
+    <section class="slide">
+        <h2>IRIs for everything</h2>
+        <img class="figure-large" src="figures/websem/RDF_triple_URI.png">
+    </section>
+
+    <section class="slide">
+        <h2>Putting triples together to build a graph</h2>
+        <img class="figure-large" src="figures/lod/graphe_rdf.png">
+    </section>
+
+    <section class="slide">
+        <h2>Putting triples together to build a graph</h2>
+        <img class="figure-large" src="figures/lod/graphe_rdf2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Putting triples together to build a graph</h2>
+        <img class="figure-large" src="figures/lod/graphe_rdf3.png">
+    </section>
+
+    <!-- TODO: describe SPARQL -->
+
+    <!-- TODO: Describe TTL -->
+
+    <section class="slide">
+        <h2>IoT: the must-have</h2>
+        <img class="figure-large" src="figures/ioshit/saliere.jpg">
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">The Linked Open Data cloud</h2>
+    </section>
+    
+    <section class="slide">
+        <h2>Who links what?</h2>
+        <ul>
+            <h3>Who</h3>
+            <li>A LOT of people</li>
+            <li>
+                <span class="next">Google, </span>
+                <span class="next">BBC, </span>
+                <span class="next">Wikipedia, </span>
+                <span class="next">IEEE, </span>
+                <span class="next">IBM, </span>
+                <span class="next">governments...</span>
+            </li>
+        </ul>
+        <ul class="next">
+            <h3>What</h3>
+            <li>A LOT of things</li>
+            <li>
+                <span class="next">Musical, </span>
+                <span class="next">cultural, </span>
+                <span class="next">scientific, </span>
+                <span class="next">geographical, </span>
+                <span class="next">technical, </span>
+                <span class="next">personal data...</span>
+            </li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2007: 12 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/lod-2007.png">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2008: 32 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/lod-2008.svg">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2009: 95 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/lod-2009.svg">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2010: 203 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/lod-2010.svg">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2011: 295 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/LOD_2011.png">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2014: 570 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/lod-2014.svg">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2018: 1231 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/LOD_2018.jpg">
+    </section>
+
+    <section class="slide">
+        <h2>The LOD in 2020: 1255 datasets</h2>
+        <img class="figure-large" src="figures/websem/lod/LOD_2020.png">
+    </section>
+
+    <!-- TODO: Discoverability, HATEOAS, REST, interoperability -->
+
+    <section class="slide">
+        <h2 class="section-title place center">Modelling knowledge</h2>
+    </section>
+
+    <!-- <section class="slide">
+        <h2>How to contextualize Linked Data?</h2>
+    </section> -->
+
+    <section class="slide">
+        <h2>Adding Semantics do the Web</h2>
+        <ul>
+            <li>Tim Berners Lee, WWW conference, 1994: <a href="http://www.w3.org/Talks/WWW94Tim/">fundamental article</a></li>
+            <li>"The Semantic Web: A new form of Web content that is meaningful to computers will unleash a revolution of new possibilities" - Tim Berners-Lee, James Hendler and Ora Lassila, Scientific American, May 2001</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>What is an ontology (with the hands) ?</h2>
+        <br><br>
+        <p>An ontology is a <b>vocabulary</b> allowing the <b>description</b> of <b>data</b>.</p>
+    </section>
+
+    <section class="slide">
+        <h2>What is an ontology (formally) ?</h2>
+        <br><br>
+        <p>An ontology is a formal, explicit specification of a shared conceptualisation. <a href="http://linkinghub.elsevier.com/retrieve/pii/S0169023X97000566">ref</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>What's in an ontology?</h2>
+        <ul>
+            <li>
+                <b>Concepts</b>
+                <ul>
+                    <li>Key ideas of the modelled domain</li>
+                    <li>e.g. Sensor, Service, Temperature...</li>
+                </ul>
+            </li>
+            <li>
+                <b>Relations</b>
+                <ul>
+                    <li>Typed links between concepts</li>
+                    <li>e.g. Observes, hasPrecision, InteractsWith...</li>
+                </ul>
+            </li>
+            <li>
+                <b>Axioms</b>
+                <ul>
+                    <li>Logical statements</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <!-- TODO translate  -->
+    <section class="slide">
+        <img class="figure-large" src="figures/websem/principles_technologies/base_connaissances1.png">
+    </section>
+
+    <section class="slide">
+        <img class="figure-large" src="figures/websem/principles_technologies/base_connaissances2.png">
+    </section>
+
+    <section class="slide">
+        <img class="figure-large" src="figures/websem/principles_technologies/base_connaissances3.png">
+    </section>
+
+    <section class="slide">
+        <img class="figure-large" src="figures/websem/principles_technologies/base_connaissances4.png">
+    </section>
+
+    <!-- TODO: Description logics -->
+
+    <section class="slide">
+        <h2 class="section-title place center">Tools for manipulating ontologies</h2>
+    </section>
+
+    <section class="slide">
+        <h2>IoT: the must-have</h2>
+        <img class="figure-large" src="figures/ioshit/tweet_ioshit.png">
+    </section>
+
+    <section class="slide">
+        <h2>Ontology applicative lifecycle</h2>
+        <ul>
+            <li>Design</li>
+            <li>Deployment</li>
+            <li>Exploitation</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ontology applicative lifecycle</h2>
+        <ul>
+            <li><b>Design</b></li>
+            <li>Deployment</li>
+            <li>Exploitation</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Protégé, the ontology editor</h2>
+        <a href="https://protege.stanford.edu/">Link</a>
+        <img class="figure-large" src="figures/websem/protege.jpeg">
+    </section>
+
+    <section class="slide">
+        <h2>Designing a class</h2>
+        <img class="figure-large" src="figures/websem/exemples/actuator_class.png">
+    </section>
+
+    <section class="slide">
+        <h2>Class usage</h2>
+        <img class="figure-large" src="figures/websem/exemples/actuator_class_usage.png">
+    </section>
+
+    <section class="slide">
+        <h2>Properties (relations)</h2>
+        <img class="figure-large" src="figures/websem/exemples/object_property.png">
+    </section>
+
+    <section class="slide">
+        <h2>Properties (relations)</h2>
+        <img class="figure-large" src="figures/websem/exemples/data_property.png">
+    </section>
+
+    <section class="slide">
+        <h2>Individuals (data)</h2>
+        <img class="figure-large" src="figures/websem/exemples/sensing_device_individuals.png">
+    </section>
+
+    <section class="slide">
+        <table>
+            <tr>
+                <th scope="col">Type</th>
+                <th>Contains</th>
+                <th>Vocabulary</th>
+            </tr>
+            <tr>
+                <th scope="row">Taxonomy</th>
+                <td>Hierarchical relations</td>
+                <td>SKOS</td>
+            </tr>
+            <tr class="next">
+                <th scope="row">"Light" ontology</th>
+                <td>
+                    <ul>
+                        <li>Hierarchical relations</li>
+                        <li>Non-taxonomic relations</li>
+                    </ul>
+                </td>
+                <td>RDFS</td>
+            </tr>
+            <tr class="next">
+                <th scope="row">"Heavy" ontology</th>
+                <td>
+                    <ul>
+                        <li>Hierarchical relations</li>
+                        <li>Non-taxonomic relations</li>
+                        <li>Logical axioms</li>
+                    </ul>
+                </td>
+                <td>OWL</td>
+            </tr>
+            </table>
+    </section>
+
+    <section class="slide">
+        <h2>Focusing on the languages: RDF</h2>
+        <ul>
+            <h3>What RDF allows</h3>
+            <li>Type a resource</li>
+            <li>Declare a property</li>
+            <li>Connect resources with relations</li>
+        </ul>
+        <b>Graph language, no additional semantics</b>
+    </section>
+
+    <section class="slide">
+        <h2>Focusing on the languages: RDFS</h2>
+        <div class="columns two">
+            <ul>
+                <h3>What RDFS allows</h3>
+                <li>Classes and relation <b>hierarchies</b></li>
+                <li><b>Domain</b>/<b>range</b> for properties</li>
+                <li>Add <b>labels</b> and <b>comments</b></li>
+            </ul>
+            <ul>
+                <h3>RDFS limitations</h3>
+                <li>No set operators</li>
+                <li>No properties for properties</li>
+                <li>No class disjunctions</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Focusing on the languages: RDFS</h2>
+        <a href="www.w3.org/2000/01/rdf-schema#">RDFS in RDF</a>
+        <p>RDF is a <b>representation</b>, RDFS is a <b>convention</b></p>
+        <pre>
+            <code>
+rdfs:label a rdf:Property ;
+	rdfs:isDefinedBy &lt;http://www.w3.org/2000/01/rdf-schema#> ;
+	rdfs:label "label" ;
+	rdfs:comment "A human-readable name for the subject." ;
+	rdfs:domain rdfs:Resource ;
+	rdfs:range rdfs:Literal .
+            </code>
+        </pre>
+    </section>
+
+    <!-- TODO: Show usage of label -->
+
+    <section class="slide">
+        <h2>Focusing on the languages : OWL</h2>
+        <ul>
+            <h3>What OWL allows</h3>
+            <li>What we juste said RDFS did not</li>
+            <li>Define cardinality restrictions</li>
+            <li>Define equivalences</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Focusing on the languages: OWL</h2>
+        <a href="www.w3.org/2000/01/rdf-schema#">OWL in RDF</a>
+        <pre>
+            <code>
+owl:sameAs a rdf:Property ;
+    rdfs:label "sameAs" ;
+    rdfs:comment "The property [...] two given individuals are equal." ;
+    rdfs:domain owl:Thing ;
+    rdfs:isDefinedBy &lt;http://www.w3.org/2002/07/owl#> ;
+    rdfs:range owl:Thing . 
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2><a href="http://vowl.visualdataweb.org/webvowl.html">Visualize ontologies</a>: Taxonomy</h2>
+        <img class="figure-large" src="figures/websem/exemples/vowl_taxonomy.png">
+    </section>
+
+    <section class="slide">
+        <h2><a href="http://vowl.visualdataweb.org/webvowl.html">Visualize ontologies</a>: Heavy ontology</h2>
+        <img class="figure-large" src="figures/websem/exemples/vowl_onto_lourde.png">
+    </section>
+
+    <section class="slide">
+        <h2>IoT: the must-have</h2>
+        <img class="figure-large" src="figures/ioshit/toaster.jpg">
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">Reasoning</h2>
+    </section>
+
+    <section class="slide">
+        <h2>What value do these conventions add?</h2>
+        <img class="figure-large" src="figures/websem/inference/reasoner.png">
+    </section>
+
+    <section class="slide">
+        <h2>Reasoning</h2>
+        <ul>
+            <li>Inference of <b>new facts</b> from <b>information</b>, <b>knowledge</b> and <b>logics</b></li>
+            <li>Detect <b>incoherences</b> and <b>inconsistencies</b></li>
+            <li>Different inference methods</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Hierarchical inference</h2>
+        <img class="figure-large" src="figures/websem/inference/hierarchical_inference_1.png">
+    </section>
+
+    <section class="slide">
+        <h2>Hierarchical inference</h2>
+        <img class="figure-large" src="figures/websem/inference/hierarchical_inference_2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Hierarchical inference</h2>
+        <img class="figure-large" src="figures/websem/inference/hierarchical_inference_3.png">
+    </section>
+
+    <section class="slide">
+        <h2>Non-taxonomic inference</h2>
+        <img class="figure-large" src="figures/websem/inference/domain_range_inference_1.png">
+    </section>
+
+    <section class="slide">
+        <h2>Non-taxonomic inference</h2>
+        <img class="figure-large" src="figures/websem/inference/domain_range_inference_2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Non-taxonomic inference</h2>
+        <img class="figure-large" src="figures/websem/inference/domain_range_inference_3.png">
+    </section>
+
+    <section class="slide">
+        <h2>Axiom-based inference</h2>
+        <img class="figure-large" src="figures/websem/inference/defined_class_1.png">
+    </section>
+
+    <section class="slide">
+        <h2>Axiom-based inference</h2>
+        <img class="figure-large" src="figures/websem/inference/defined_class_2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Axiom-based inference</h2>
+        <img class="figure-large" src="figures/websem/inference/defined_class_3.png">
     </section>
 
     <footer class="badge">

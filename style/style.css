@@ -115,3 +115,7 @@ header.caption {
         rgba(0, 0, 0, 0.1) 50%
     );
 }
+
+.progress { 
+   top: 0;
+}
