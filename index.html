@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="node_modules/@shower/material/styles/styles.css"></link>
     <link rel="stylesheet" href="./style/style.css"></link>
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css"></link>
+    <script src="node_modules/d3/dist/d3.min.js"></script>
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
@@ -36,7 +37,7 @@
     <section class="slide">
         <h2>Who are these people ?</h2>
         <img class="figure" src="figures/web/lee_cerf.jpg"></img>
-        <p class="fig-caption">Tim Berners Lee and Vint Cert</p>
+        <p class="next fig-caption">Tim Berners Lee and Vint Cert</p>
     </section>
 
     <section class="slide">
@@ -83,6 +84,184 @@
     <section class="slide">
         <h2>The Web, an Internet application</h2>
         <object class="figure" data="resources/img/web/internet-vs-web.svg" type="image/svg+xml"></object>
+    </section>
+
+    <section class="slide">
+        <h2>The World Wide Web</h2>
+        <ul>
+            <h3>Fundamental principles</h3>
+            <li><b>Identification</b> of ressources (pages, images, sounds...) with URLs</li>
+            <li><b>Representation</b> of ressources in different serializations</li>
+            <li><b>Interaction</b> between agents for representation negociation, resource discovery, etc.</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Invention of the Web</h2>
+        <ul>
+            <li>The Web was invented at CERN in 1990 by Tim Berners Lee</li>
+            <li>Motivation: building an interoperable file system that scales.</li>
+        </ul>
+        <img class="figure" src="figures/websem/tim_berners_lee.jpeg">
+    </section>
+
+    <section class="slide">
+        <h2>A timeline of the Web</h2>
+        <div class="columns two">
+            <ul>
+                <li>1990: First Web browsers</li>
+                <li>1991: Distribution of browsers, first websites (<a href="http://info.cern.ch">info.cern.ch</a>)</li>
+                <li>1995: Amazon is a book store</li>
+                <li>1998: Google is a seach engine</li>
+                <li>2001: Wikipedia, an encyclopedia</li>
+                <li>2006: Twitter, for micro-blogging</li>
+                <li>2014: Over a <b>billion</b> websites</li>
+            </ul>
+            <div>
+                <img class="small-figure-right" src="figures/websem/screenshot-google.jpeg">
+                <img class="small-figure-right" src="figures/websem/screenshot-wikipedia.jpeg">
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Some figures of the WWW</h2>
+        <img class="figure" src="data/websites.png">
+        <p>Over <b>1000 billion URL indexed</b> and interconnected</p>
+    </section>
+
+    <section class="slide">
+        <h2>W3C: Standardization for the Web</h2>
+        <p>Founded in april 1993 by Sir Tim B.L., the World Wide Web Consortium (W3C) has 436 members as of November 14th 2020.</p>
+        <img class="figure" src="figures/web/W3C_icon.png">
+    </section>
+
+    <section class="slide">
+        <h2>What is standardized by the W3C ?</h2>
+        <ul>
+            <h3>All Web-related technologies</h3>
+            <li>Web documents (HTML, CSS...)</li>
+            <li>XML and related languages (XPath, and *ML)</li>
+            <li>Web services (SOAP, WSDL)</li>
+            <li>Web browsers</li>
+            <li>Accessibility, payments, consent...</li>
+            <li>Semantic Web technologies (To be announced)</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Other standards organizations</h2>
+        <ul>
+            <li>Web protocols are standardized by the IETF</li>
+        </ul>
+        <img class="figure" src="figures/web/ietf-logo.jpg">
+    </section>
+
+    <section class="slide">
+        <h2>IoT: the must-have</h2>
+        <img class="figure-large" src="figures/ioshit/remote.jpg">
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">"Old Web" limits</h2>
+    </section>
+
+    <section class="slide">
+        <h2>What you can do... if you know where to look</h2>
+        <ul>
+            <li>Get plane tickets for London this weekend</li>
+            <li>Check the weather in London this weekend</li>
+            <li>Look for housing in London this weekend</li>
+            <li>Check my bank account</li>
+            <li>Cancel my flight</li>
+            <li>Order pizza fr comfort</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>What the user wants</h2>
+        <i class="far fa-frown fa-3x"></i>
+        <ul>
+            <li>Use complex research tools</li>
+            <li>Browse to find an information</li>
+        </ul>
+        <i class="far fa-smile fa-3x"></i>
+        <ul>
+            <li><b>Quickly</b> find <b>relevant</b> and <b>reliable</b> information</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>The regular Web is not helping</h2>
+        <ul>
+            <li>Finding the cheapest flight is a pain</li>
+            <li>Finding relevant information about a certain version of a library</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>What the user sees</h2>
+        <img class="figure-large" src="figures/websem/raclette.png">
+    </section>
+
+    <section class="slide">
+        <h2>What the user understands</h2>
+        <img class="figure-large" src="figures/websem/arbre_ressources_semantique.png">
+    </section>
+
+    <section class="slide">
+        <h2>What the computer sees</h2>
+        <img class="figure-large" src="figures/websem/arbre_ressources_web.png">
+    </section>
+
+    <section class="slide">
+        <h2>In one word : <b>syntactic</b></h2>
+        <ul>
+            <li>Addressing with URLs</li>
+            <li>Interlinked documents</li>
+            <li>Multimedia content</li>
+            <li>All the meaning is directed towards a human user</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Adding meaning to the document</h2>
+        <h3>With annotations?</h3>
+        <pre>
+            <code>&lt;recipe&gt;</code>
+            <code>  &lt;title&gt;Raclette (Recipe)&lt;/title&gt;</code>
+            <code>    &lt;ingredient&gt;</code>
+            <code>      &lt;name>Raclette (Cheese)&lt;/name></code>
+            <code>      &lt;origin>Switzerland&lt;/origin></code>
+            <code>    &lt;/ingredient></code>
+            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+            <code>&lt;origin>Switzerland&lt;/origin></code>
+            <code>&lt;side>Potato&lt;/side></code>
+            <code>&lt;/recipe&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Annotation limits</h2>
+        <ul>
+            <li>Annotation define information <b>zones</b></li>
+            <li>... but not a <b>meaning</b> to these zones</li>
+            <li>Markup text remains targeted at humans</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Data on the "old" Web...</h2>
+        <ul>
+            <h3>...is raw</h3>
+            <li>A lot of information, but very little metadata</li>
+            <li>Untyped links</li>
+        </ul>
+        <ul>
+            <h3>...is driven by supply</h3>
+            <li>Data is <b>structured</b> by the one <b>collecting</b> it</li>
+            <li>User requirements are only <b>guessed</b></li>
+        </ul>
     </section>
 
     <footer class="badge">
