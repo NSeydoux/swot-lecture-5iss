@@ -990,6 +990,176 @@ owl:sameAs a rdf:Property ;
         <img class="figure-large" src="figures/websem/inference/defined_class_3.png">
     </section>
 
+    <section class="slide">
+        <h2 class="section-title place center">Introduction to knowledge engineering</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Linking ontologies at design time: import</h2>
+        <img class="figure" src="figures/websem/import.svg">
+        <p style="text-align: center;">Red imports blue</p>
+    </section>
+
+    <section class="slide">
+        <h2>Linking ontologies at design time: reuse</h2>
+        <img class="figure" src="figures/websem/reuse.svg">
+        <p style="text-align: center;">Red reuses blue</p>
+    </section>
+
+    <section class="slide">
+        <h2>Reuse example: SSN and DUL</h2>
+        <img class="figure-large" src="figures/websem/SSN-Observation-Stimulus-Pattern.jpg">
+    </section>
+    
+    <section class="slide">
+        <h2>Linking ontologies a posteriori: align</h2>
+        <img class="figure" src="figures/websem/align.svg">
+        <ul>
+            <li>Equivalence/Disjoncontion</li>
+            <li>Subsumption, part-of</li>
+            <li>Any relation</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Going beyond alignment</h2>
+        <img class="figure-large" src="figures/websem/complex-alignments.png">
+    </section>
+
+    <section class="slide">
+        <h2>Automatic alignments</h2>
+        <ul>
+            <li>Leverage the expressiveness of ontologies</li>
+            <li>"Discover" alignments as you go</li>
+            <li>Similar to <b>content negociation</b> on the Web</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Alignement example</h2>
+        <ul>
+            <h3>SSN et SAREF: alignements de T-box</h3>
+            <li><code>saref:Device owl:sameAs ssn:Device</code></li>
+            <li><code>ssn:startTime rdfs:subClassOf saref:Time</code></li>
+        </ul>
+        <ul>
+            <h3>Alignement de A-box</h3>
+            <li><code>http://sws.geonames.org/2972315 owl:sameAs http://fr.dbpedia.org/resource/Toulouse</code></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Alignement and reasoning</h2>
+        <img class="figure-large" src="figures/websem/inference/alignment_1.png">
+    </section>
+
+    <section class="slide">
+        <h2>Alignement and reasoning</h2>
+        <img class="figure-large" src="figures/websem/inference/alignment_2.png">
+    </section>
+
+    <section class="slide">
+        <h2>Alignement and reasoning</h2>
+        <img class="figure-large" src="figures/websem/inference/alignment_3.png">
+    </section>
+
+    <section class="slide">
+        <h2>Different ontology types</h2>
+        <img class="figure-large" src="figures/websem/ontology_roles.png">
+    </section>
+
+<!-- TODO: \begin{frame}{A precision about SPARQL}
+    \begin{block}{Querying A-Box}
+        \begin{itemize}
+            \item Queries address \textbf{assertions} (data) in the knowledge base
+            \item What are entities of \concept{rdf}{type} \concept{ssn}{Sensor} that \concept{ssn}{observes} entities of \concept{rdf}{type} \concept{qudt}{Temperature} \concept{ex}{inUnit} Celsius with an \concept{ssn}{value} above \concept{xsd}{float} 25.0 ?  
+        \end{itemize}
+    \end{block}
+	\onslide<2>{
+		\begin{block}{Querying the T-box}
+			\begin{itemize}
+				\item Queries address the \textbf{terminology} in the KB, the concepts
+				\item What are the \concept{rdfs}{subClassOf} of \concept{ssn}{Device}
+				\item What relations connect a \concept{dul}{Property} and a subclass of \concept{ssn}{Device} which \concept{ssn}{featureOfInterest} is \textbf{not} \concept{qudt}{Temperature} ?
+			\end{itemize}
+		\end{block}
+	}
+\end{frame} -->
+
+    <section class="slide">
+        <h2 class="section-title place center">Everyday Semantic Web</h2>
+    </section>
+
+    <section class="slide">
+        <h2>schema.org</h2>
+        <ul>
+            <li>Created by Google, Microsoft, Yahoo and Yandex</li>
+            <li>Used in millions of websites</li>
+            <li>Think about it for <b>SEO</b></li>
+        </ul>
+        <img class="figure" src="figures/websem/schema_org.png">
+        <a href="https://schema.org/Person">https://schema.org/Person</a>
+    </section>
+
+    <section class="slide">
+        <h2>Google's knowledge graph</h2>
+        <img class="figure-large" src="figures/websem/google_kg.jpg">
+    </section>
+
+    <section class="slide">
+        <h2>Graphs everywhere</h2>
+        <img class="figure-large" src="figures/websem/Facebook-Social-Graph.png">
+        <p><a href="http://steve-dale.net/wp-content/uploads/2011/03/Facebook-Social-Graph.png">Source</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>Multimedia graphs</h2>
+        <img class="figure-large" src="figures/websem/netflixgraph.png">
+        <p><a href="https://medium.com/netflix-techblog/netflixgraph-metadata-library-an-optimization-case-study-6cc7d5eb2946">Source</a></p>
+    </section>
+
+    <section class="slide">
+        <h2>IoT: The must-have</h2>
+        <img class="figure-large" src="figures/ioshit/oven.jpg">
+    </section>
+
+    <section class="slide">
+        <h2 class="section-title place center">Semantic Web of Things</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Where in the W3C layer cake ?</h2>
+        <img class="figure-large" src="figures/websem/Semantic_Web_Stack_future.png">
+    </section>
+
+    <section class="slide">
+        <h2>Where in the W3C layer cake ?</h2>
+        <img class="figure-large" src="figures/websem/Semantic_Web_Stack_future.png">
+    </section>
+
+    <section class="slide">
+        <h2>Smart building use case</h2>
+        <img class="figure-large" src="figures/use_cases/adream.jpg">
+    </section>
+
+    <!-- Smart building animation -->
+
+    <section class="slide">
+        <h2>Motivation</h2>
+        <p><b>Interoperability</b> is a source of <b>value creation</b> for the IoT <a href="https://www.researchgate.net/publication/307122744_Semantic_Interoperability_for_the_Web_of_Things">(Source)</a></p>
+        <img class="figure-large" src="figures/SWoT/m2m.png">
+    </section>
+
+    <section class="slide">
+        <h2>IoT challenges</h2>
+        <ul>
+            <li><b>Vertical fracturation</b></li>
+            <li>Lots of <b>ad-hoc</b> data with a <b>low reusability</b></li>
+            <li>High <b>heterogeneity</b> for hardware, software and app. domains </li>
+        </ul>
+        <img class="figure" src="figures/SWoT/silos.jpg" title="https://www.flickr.com/photos/docsearls/5500714140">
+    </section>
+
     <footer class="badge">
         <a href="https://github.com/shower/shower">Fork me on GitHub</a>
     </footer>
